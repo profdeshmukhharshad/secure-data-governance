@@ -110,7 +110,6 @@ def upload_file():
     policies = db.collection(
         "policies" ).stream()
     
-    policies = []
 
     for doc in policies_docs:
         policies.append(
