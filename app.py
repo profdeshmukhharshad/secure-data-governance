@@ -107,11 +107,14 @@ def upload_file():
 
     role = request.form.get("role","User")
 
-    policies = db.collection(
-        "policies" ).stream()
-    
+    policies_docs = db.collection(
+        "policies"
+        ).stream()
+
+    policies = []
 
     for doc in policies_docs:
+
         policies.append(
             doc.to_dict()
         )
