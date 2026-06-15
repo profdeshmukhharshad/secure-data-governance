@@ -1,0 +1,127 @@
+body{
+    background:#0f172a;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+    margin:0;
+}
+
+.container{
+    padding:30px;
+}
+
+.page-title{
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.upload-card,
+.status-card,
+.files-card{
+    background:#1e293b;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.drop-zone{
+
+    border:2px dashed #38bdf8;
+
+    border-radius:15px;
+
+    padding:60px;
+
+    min-height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    margin-bottom:20px;
+
+}
+
+.drop-zone:hover{
+    background:#0f172a;
+}
+
+.drop-zone h2{
+    margin-bottom:10px;
+}
+
+select{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin-top:20px;
+}
+
+.upload-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+.progress{
+    width:100%;
+    height:25px;
+    background:#0f172a;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#22c55e;
+    transition:1s;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 12px;
+    border-radius:20px;
+    margin-right:10px;
+}
+
+.success{
+    background:#22c55e;
+}
+
+.warning{
+    background:#f59e0b;
+}
+
+.danger{
+    background:#ef4444;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+}
+
+tr{
+    border-bottom:1px solid #334155;
+}

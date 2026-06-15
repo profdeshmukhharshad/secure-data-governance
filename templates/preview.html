@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>File Preview</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>File Preview</h1>
+
+<br>
+
+<div id="previewContainer">
+
+Loading...
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='js/preview.js') }}"></script>
+
+</body>
+
+</html>

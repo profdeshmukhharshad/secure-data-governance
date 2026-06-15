@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Threat Intelligence</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Threat Intelligence Center</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h4>🟢 Low Risk</h4>
+<h2 id="lowCount">0</h2>
+</div>
+
+<div class="card">
+<h4>🟡 Medium Risk</h4>
+<h2 id="mediumCount">0</h2>
+</div>
+
+<div class="card">
+<h4>🟠 High Risk</h4>
+<h2 id="highCount">0</h2>
+</div>
+
+<div class="card">
+<h4>🔴 Critical Risk</h4>
+<h2 id="criticalCount">0</h2>
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='js/threat.js'
+) }}"></script>
+
+</body>
+
+</html>

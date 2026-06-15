@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+
+serviceAccountKey.json
+
+uploads/
+downloads/
+
+*.pyc

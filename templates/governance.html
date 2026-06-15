@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Governance Policies</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Governance Policy Builder</h1>
+
+<br>
+
+<div class="card">
+
+<h3>Create Policy</h3>
+
+<br>
+
+<label>Role</label>
+
+<select id="role">
+
+<option>User</option>
+
+<option>Admin</option>
+
+<option>SuperAdmin</option>
+
+</select>
+
+<br><br>
+
+<label>Classification</label>
+
+<select id="classification">
+
+<option>Public</option>
+
+<option>Internal</option>
+
+<option>Confidential</option>
+
+<option>Restricted</option>
+
+</select>
+
+<br><br>
+
+<label>Action</label>
+
+<select id="action">
+
+<option>Allow</option>
+
+<option>Deny</option>
+
+</select>
+
+<br><br>
+
+<button onclick="createPolicy()">
+
+Create Policy
+
+</button>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Active Policies</h3>
+
+<br>
+
+<div id="policyList">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='js/governance.js') }}"></script>
+
+</body>
+
+</html>

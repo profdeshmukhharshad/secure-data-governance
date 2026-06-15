@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Access Requests
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for(
+'static',
+filename='css/dashboard.css'
+) }}">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>
+Access Requests
+</h1>
+
+<br>
+
+<div id="requestList">
+
+Loading...
+
+</div>
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='js/access.js'
+) }}"></script>
+
+</body>
+
+</html>

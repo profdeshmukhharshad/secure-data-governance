@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+SecureGov
+</div>
+
+<div class="topbar">
+<button
+onclick="toggleTheme()"
+style="
+padding:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+">
+
+🌙 Theme
+
+</button>
+
+</div>
+
+<a href="/dashboard" class="active">📊 Dashboard </a>
+<a href="/vault">
+🔐 File Vault
+</a>
+<a href="/risk">
+⚠ Risk Center
+</a>
+<a href="/compliance">
+📋 Compliance
+</a>
+<a href="/governance">
+🛡 Governance
+</a>
+<a href="/audit">
+📝 Audit Logs
+</a>
+<a href="/access">
+🔑 Access Requests
+</a>
+
+<a href="/threat">
+🚨 Threat Center
+</a>
+
+<a href="#" onclick="logoutUser()">
+Logout
+</a>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h1>
+Dashboard
+</h1>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h4>Total Users</h4>
+<h2 id="usersCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Protected Files</h4>
+<h2 id="filesCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Policies</h4>
+<h2 id="policiesCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Access Requests</h4>
+<h2 id="requestsCount">0</h2>
+</div>
+
+</div>
+
+<div class="chart-container">
+
+<canvas id="riskChart"></canvas>
+
+</div>
+
+<br>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+
+<h4>
+Pending Requests
+</h4>
+
+<h2 id="pendingCount">
+0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h4>
+Approved Requests
+</h4>
+
+<h2 id="approvedCount">
+0
+</h2>
+
+</div>
+
+<div class="card">
+
+<h4>
+Rejected Requests
+</h4>
+
+<h2 id="rejectedCount">
+0
+</h2>
+
+</div>
+
+</div>
+
+<div class="chart-container">
+
+<h2>
+Recent Activities
+</h2>
+
+<br>
+
+<div id="activityFeed">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+
+<script>
+
+const ctx =
+document.getElementById('riskChart');
+
+new Chart(ctx, {
+
+type:'bar',
+
+data:{
+
+labels:[
+'Low',
+'Medium',
+'High',
+'Critical'
+],
+
+datasets:[{
+
+label:'Risk Distribution',
+
+data:[
+12,
+8,
+4,
+1
+]
+
+}]
+
+}
+
+});
+
+</script>
+
+<script src="{{ url_for('static',
+filename='js/dashboard.js') }}"></script>
+
+<script src="{{ url_for('static',
+filename='js/theme.js') }}"></script>
+
+</body>
+
+</html>

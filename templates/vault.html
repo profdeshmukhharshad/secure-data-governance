@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enterprise File Vault</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/vault.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="page-title">
+
+🔐 Enterprise File Vault
+
+</div>
+
+<div class="upload-card">
+
+<h2>Secure Upload Center</h2>
+
+<br>
+
+<div class="drop-zone" onclick="document.getElementById('fileInput').click()">
+
+<h2>📁 Drag & Drop Files Here</h2>
+
+<p>or click to select a file</p>
+
+<input
+type="file"
+id="fileInput"
+hidden>
+
+</div>
+
+<p id="selectedFile" style="margin-top:15px;">
+No file selected
+</p>
+
+<select id="classification">
+
+<option>Public</option>
+
+<option>Internal</option>
+
+<option>Confidential</option>
+
+<option>Restricted</option>
+
+</select>
+
+<br>
+
+<button
+class="upload-btn"
+onclick="uploadFile()">
+
+Upload Securely
+
+</button>
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="status-card">
+
+<h2>Security Status</h2>
+
+<br>
+
+<div id="uploadStatus">
+
+Waiting...
+
+</div>
+
+</div>
+
+<div class="files-card">
+
+<h2>Recent Files</h2>
+
+<br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>File</th>
+
+<th>Classification</th>
+
+<th>Risk</th>
+
+<th>Encryption</th>
+
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="fileTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/vault.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Super Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/superadmin.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+SecureGov
+</div>
+
+<a href="/dashboard">🏠 Dashboard</a>
+<a href="/users">👥 User Approvals</a>
+<a href="/vault">📁 File Vault</a>
+<a href="/policies">🛡 Policies</a>
+<a href="/risk">⚠ Risk Center</a>
+<a href="/compliance">📊 Compliance</a>
+<a href="/audit">📝 Audit Logs</a>
+<a href="/settings">⚙ Settings</a>
+
+<a href="#" onclick="logoutUser()">
+🚪 Logout
+</a>
+
+</div>
+
+<div class="main">
+
+<div class="header">
+
+<h1>
+Super Admin Dashboard
+</h1>
+
+<h3>
+Manual User Verification
+</h3>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h4>Total Users</h4>
+<h2 id="totalUsers">0</h2>
+</div>
+
+<div class="card">
+<h4>Pending</h4>
+<h2 id="pendingCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Approved</h4>
+<h2 id="approvedCount">0</h2>
+</div>
+
+<div class="card">
+<h4>Rejected</h4>
+<h2 id="rejectedCount">0</h2>
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Pending User Requests</h2>
+
+<div id="pendingUsers">
+
+Loading...
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>User Statistics</h2>
+
+<canvas id="userChart"></canvas>
+
+</div>
+
+</div>
+<script>
+
+firebase.auth().onAuthStateChanged(async (user)=>{
+
+    if(!user){
+
+        window.location.href="/login";
+        return;
+    }
+
+    const doc =
+    await db.collection("users")
+    .doc(user.uid)
+    .get();
+
+    if(!doc.exists){
+
+        alert("Access Denied");
+
+        window.location.href="/dashboard";
+        return;
+    }
+
+    const data = doc.data();
+
+    if(data.role !== "superadmin"){
+
+        alert("Access Denied");
+
+        window.location.href="/dashboard";
+        return;
+    }
+
+});
+
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+</body>
+
+</html>

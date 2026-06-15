@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>System Architecture</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/dashboard.css') }}">
+
+<style>
+
+.arch-box{
+
+    width:300px;
+
+    margin:20px auto;
+
+    padding:20px;
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.arch-box:hover{
+
+    transform:scale(1.05);
+
+}
+
+.arrow{
+
+    text-align:center;
+
+    font-size:30px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Secure Data Governance Architecture</h1>
+
+<br>
+
+<div class="arch-box">
+👤 User
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+🔑 Authentication Layer
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+🛡 Governance Engine
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+⚠ Risk Engine
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+🔐 AES-256 Encryption Engine
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+☁ Firebase Storage
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="arch-box">
+📝 Audit & Compliance Layer
+</div>
+
+</div>
+
+</body>
+
+</html>

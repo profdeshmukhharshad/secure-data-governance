@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Risk Center</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/dashboard.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Risk Center</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h4>Low Risk</h4>
+<h2 id="lowRisk">0</h2>
+</div>
+
+<div class="card">
+<h4>Medium Risk</h4>
+<h2 id="mediumRisk">0</h2>
+</div>
+
+<div class="card">
+<h4>High Risk</h4>
+<h2 id="highRisk">0</h2>
+</div>
+
+<div class="card">
+<h4>Critical Risk</h4>
+<h2 id="criticalRisk">0</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="chart-container">
+
+<canvas id="riskChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='js/risk.js') }}"></script>
+
+</body>
+
+</html>
