@@ -158,17 +158,14 @@ def upload_file():
     exist_ok=True
     )
 
-    save_path = os.path.join(
-        "uploads",
-        encrypted_name
+    blob = bucket.blob(
+    "encrypted_files/" + encrypted_name
+)
+
+    blob.upload_from_string(
+        encrypted_bytes,
+    content_type="application/octet-stream"
     )
-
-    with open(save_path, "wb") as f:
-
-        f.write(encrypted_bytes)
-
-    blob = bucket.blob("encrypted_files/" + encrypted_name)
-    blob.upload_from_filename(save_path)
     blob.make_public()
     storage_url = blob.public_url
 
