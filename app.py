@@ -153,6 +153,11 @@ def upload_file():
         ".enc"
     )
 
+    os.makedirs(
+    "uploads",
+    exist_ok=True
+    )
+
     save_path = os.path.join(
         "uploads",
         encrypted_name
